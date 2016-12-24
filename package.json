@@ -1,0 +1,37 @@
+{
+  "name": "fortune-telling",
+  "title": "Fortune Telling",
+  "version": "1.0.0",
+  "description": "Fortune telling predictions based on some simple machine learning algorithms.",
+  "homepage": "https://github.com/shian15810/fortune-telling",
+  "main": "server/index.js",
+  "scripts": {
+    "test": "NODE_ENV=test && node server",
+    "start": "NODE_ENV=production && node server"
+  },
+  "author": "shian15810",
+  "license": "MIT",
+  "dependencies": {
+    "bluebird": "^3.4.7",
+    "body-parser": "^1.15.2",
+    "cheerio": "^0.22.0",
+    "compression": "^1.6.2",
+    "express": "^4.14.0",
+    "iconv-lite": "^0.4.15",
+    "morgan": "^1.7.0",
+    "natural": "^0.4.0",
+    "node-schedule": "^1.2.0",
+    "request": "^2.79.0",
+    "request-promise": "^4.1.1",
+    "throng": "^4.0.0",
+    "winston": "^2.3.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.12.2",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-react": "^6.8.0"
+  },
+  "repository": "shian15810/fortune-telling"
+}
