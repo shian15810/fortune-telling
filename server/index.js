@@ -14,6 +14,7 @@ const schedule = require('node-schedule');
 const throng = require('throng');
 const winston = require('winston');
 
+const heroku = process.env.HEROKU || false;
 const port = process.env.PORT || 8080;
 const test = process.env.NODE_ENV !== 'production';
 
@@ -94,4 +95,5 @@ const start = () => {
   twse();
 };
 
-throng(start);
+if (heroku) start();
+if (!heroku) throng(start);
