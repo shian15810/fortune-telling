@@ -95,5 +95,10 @@ const start = () => {
   twse();
 };
 
-if (heroku) start();
+if (heroku) {
+  throng({
+    workers: 1,
+    start,
+  });
+}
 if (!heroku) throng(start);
