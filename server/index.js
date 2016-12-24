@@ -14,6 +14,7 @@ const schedule = require('node-schedule');
 const throng = require('throng');
 const winston = require('winston');
 
+let frontend = process.env.FRONTEND;
 const heroku = process.env.HEROKU || false;
 const port = process.env.PORT || 8080;
 const test = process.env.NODE_ENV !== 'production';
@@ -21,7 +22,6 @@ const test = process.env.NODE_ENV !== 'production';
 const start = () => {
   let $;
   let classifier;
-  let frontend;
   let listen = false;
   const app = express();
   const match = /^[1-9]{1}\d{3}[\s\t].+[^R]$/;
@@ -36,13 +36,13 @@ const start = () => {
   app.use(compression());
   if (test) {
     winston.info('Running on test mode...');
-    frontend = 'client';
     app.use(morgan('dev'));
+    if (!frontend) frontend = 'client';
   }
   if (!test) {
     winston.info('Running on production mode...');
-    frontend = 'dist';
     app.use(morgan('tiny'));
+    if (!frontend) frontend = 'dist';
   }
   app.use(express.static(path.join(__dirname, '..', frontend)));
   app.get('/', (req, res) => {

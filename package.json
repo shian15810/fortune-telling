@@ -33,5 +33,11 @@
     "eslint-plugin-jsx-a11y": "^2.2.3",
     "eslint-plugin-react": "^6.8.0"
   },
-  "repository": "shian15810/fortune-telling"
+  "repository": "shian15810/fortune-telling",
+  "private": true,
+  "engines": {
+    "node": ">7.0.0",
+    "npm": ">4.0.0",
+    "yarn": ">0.18.0"
+  }
 }
