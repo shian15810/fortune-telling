@@ -30,7 +30,7 @@ const start = () => {
     上市: 'http://isin.twse.com.tw/isin/C_public.jsp?strMode=2',
     上櫃: 'http://isin.twse.com.tw/isin/C_public.jsp?strMode=4',
     興櫃: 'http://isin.twse.com.tw/isin/C_public.jsp?strMode=5',
-    上市公司: 'http://isin.twse.com.tw/isin/C_public.jsp?strMode=1',
+    公開發行: 'http://isin.twse.com.tw/isin/C_public.jsp?strMode=1',
   };
 
   app.use(bodyParser.json());
