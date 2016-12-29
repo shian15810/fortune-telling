@@ -96,10 +96,8 @@ const start = () => {
   twse();
 };
 
-if (heroku) {
-  throng({
-    workers: 1,
-    start,
-  });
+if (heroku || test) {
+  throng({ workers: 1, start });
+} else {
+  throng(start);
 }
-if (!heroku) throng(start);
